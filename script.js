@@ -1,63 +1,63 @@
 const gamesList = [
 	{
 		title: "Développement logiciel / IT",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html",
 		id: 1,
 	},
 	{
 		title: "Marketing & Communication",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://www.mastersincommunications.org/wp-content/uploads/2019/04/Marketing-Ipad.jpg",
 		id: 2,
 	},
 	{
 		title: "Construction / BTP",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://www.argusdelassurance.com/mediatheque/4/6/1/000109164_896x598_c.jpeg",
 		id: 3,
 	},
 	{
 		title: "Industrie / Production",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://bigmedia.bpifrance.fr/sites/default/files/2024-10/industrie%204.jpg",
 		id: 4,
 	},
 	{
 		title: "Services (banque, assurance, finance, RH, consulting)",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://monorientation.univ-grenoble-alpes.fr/medias/photo/assurance-banque-finance_1480074064679-png",
 		id: 5,
 	},
 	{
 		title: "Santé & Médical",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://static.vecteezy.com/ti/vecteur-libre/p1/679672-icone-de-sante-medical-gratuit-vectoriel.jpg",
 		id: 6,
 	},
 	{
 		title: "Recherche & Innovation / R&D",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://www.jbel-annour.ma/imgs/pages/big/innovation_0.jpg",
 		id: 7,
 	},
     {
 		title: "Éducation & Formation",
-		year: ,
+		year: null,
 		imageUrl:
 			"https://cursus.edu/storage/thumbnails/yWIOqF1IKIUhPONzwIAeCNz53BYQPSLJLoLf8EYG.jpeg",
 		id: 8,
 	},
      {
-		title: "Santé & Médical",
-		year: ,
+		title: "Télécoms / Infrastructures",
+		year: null,
 		imageUrl:
 			"https://aldene.fr/wp-content/uploads/2022/04/Reseaux-et-telephonie.png",
 		id: 9,
