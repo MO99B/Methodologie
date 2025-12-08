@@ -74,7 +74,7 @@ function writeDom() {
                         <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
                         <div class="card-body">
                         <h3 class="card-title">${game.title}</h3>
-                            <p class="card-text">${game.year}</p>
+                            // <p class="card-text">${game.year}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button 
@@ -91,7 +91,7 @@ function writeDom() {
                                         data-bs-toggle="modal" data-bs-target="#exampleModal"
 										data-edit-id="${game.id}"
                                     >
-                                        Edit
+                                        Consulter
                                     </button>
                                 </div>
                             </div>
