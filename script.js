@@ -1,46 +1,68 @@
 const gamesList = [
 	{
-		title: "2K25",
-		year: 2024,
+		title: "Développement logiciel / IT",
+		year: ,
 		imageUrl:
-			"https://images.ctfassets.net/wn7ipiv9ue5v/2o2zzN8bdBFi6BwGFJR1lK/fab7d2a0fa20e7a8ec13c6400bd21422/N25-BASE-STANDARD_EDITION_ANNOUNCE-NA-STATIC-ESRB-AGN-1920x1080.jpg",
+			"https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html",
 		id: 1,
 	},
 	{
-		title: "Naruto Shippuden: Ultimate Ninja Storm 4",
-		year: 2020,
+		title: "Marketing & Communication",
+		year: ,
 		imageUrl:
-			"https://i.ytimg.com/vi/UHgQwjyfhn0/maxresdefault.jpg",
+			"https://www.mastersincommunications.org/wp-content/uploads/2019/04/Marketing-Ipad.jpg",
 		id: 2,
 	},
 	{
-		title: "FC25",
-		year: 2024,
+		title: "Construction / BTP",
+		year: ,
 		imageUrl:
-			"https://i.ytimg.com/vi/pBM2xyco_Kg/maxresdefault.jpg",
+			"https://www.argusdelassurance.com/mediatheque/4/6/1/000109164_896x598_c.jpeg",
 		id: 3,
 	},
 	{
-		title: "Call of duty",
-		year: 2020,
+		title: "Industrie / Production",
+		year: ,
 		imageUrl:
-			"https://cdn-uploads.gameblog.fr/img/news/567352_6655e91f1acb0.jpg",
+			"https://bigmedia.bpifrance.fr/sites/default/files/2024-10/industrie%204.jpg",
 		id: 4,
 	},
 	{
-		title: "God of War Ragnarök",
-		year: 2022,
+		title: "Services (banque, assurance, finance, RH, consulting)",
+		year: ,
 		imageUrl:
-			"https://m.media-amazon.com/images/I/81c0fBqu1KL._AC_UF1000,1000_QL80_.jpg",
+			"https://monorientation.univ-grenoble-alpes.fr/medias/photo/assurance-banque-finance_1480074064679-png",
 		id: 5,
 	},
 	{
-		title: "Disney Dreamlight Valley",
-		year: 2022,
+		title: "Santé & Médical",
+		year: ,
 		imageUrl:
-			"https://i.ytimg.com/vi/pYk8Wsehc1k/maxresdefault.jpg",
+			"https://static.vecteezy.com/ti/vecteur-libre/p1/679672-icone-de-sante-medical-gratuit-vectoriel.jpg",
 		id: 6,
 	},
+	{
+		title: "Recherche & Innovation / R&D",
+		year: ,
+		imageUrl:
+			"https://www.jbel-annour.ma/imgs/pages/big/innovation_0.jpg",
+		id: 7,
+	},
+    {
+		title: "Éducation & Formation",
+		year: ,
+		imageUrl:
+			"https://cursus.edu/storage/thumbnails/yWIOqF1IKIUhPONzwIAeCNz53BYQPSLJLoLf8EYG.jpeg",
+		id: 8,
+	},
+     {
+		title: "Santé & Médical",
+		year: ,
+		imageUrl:
+			"https://aldene.fr/wp-content/uploads/2022/04/Reseaux-et-telephonie.png",
+		id: 9,
+	},
+
 
 ]
 
