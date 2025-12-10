@@ -91,7 +91,7 @@ function writeDom() {
                                         data-bs-toggle="modal" data-bs-target="#exampleModal"
 										data-edit-id="${game.id}"
                                     >
-                                        Consulter
+                                        Obtenir les recommandations
                                     </button>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@ function viewModal(gameId) {
 	// Écrire dans le footer
 	document.querySelector(".modal-footer").innerHTML = `
 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-			Close
+			Fermer
 		</button>
 </form>`
 }
