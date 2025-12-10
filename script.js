@@ -261,7 +261,7 @@ function modifyFom(gameData) {
 
   form.title.value = gameData.title || "";
   form.year.value = gameData.year || "";
-  form.imageUrl.value = gameData.imageUrl || "";
+  //form.imageUrl.value = gameData.imageUrl || "";
   renderRecommendations(gameData);
 }
 function renderRecommendations(game) {
