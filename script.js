@@ -280,7 +280,7 @@ function renderRecommendations(game) {
             (r) => `
           <li class="list-group-item">
             <strong>${escapeHtml(r.name)}</strong>
-            <div class="small text-muted">${escapeHtml(r.description)}</div>
+            <!--<div class="small text-muted">${escapeHtml(r.description)}</div>-->
           </li>`
           )
           .join("")}
