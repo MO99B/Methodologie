@@ -91,7 +91,7 @@ function writeDom() {
                                         data-bs-toggle="modal" data-bs-target="#exampleModal"
 										data-edit-id="${game.id}"
                                     >
-                                        Obtenir les recommandations
+                                        Consulter
                                     </button>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ function editModal(gameId) {
 		data.text().then((form) => {
 			// Modifiez le titre et le corps du modal
 			const selectedGame = gamesList[result]
-			modifyModal("Mode Edition", form)
+			modifyModal("Méthodologies recommandées", form)
 			modifyFom({
 				title: selectedGame.title,
 				year: selectedGame.year,
