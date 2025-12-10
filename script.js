@@ -176,8 +176,8 @@ function modifyModal(modalTitle, modalBody) {
 	document.querySelector(".modal-footer").innerHTML = `
 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
 			Close
-		</button>
-		<button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Submit</button>
+		<!--</button>
+		<button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Submit</button>-->
 </form>`
 }
 
