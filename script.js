@@ -1,5 +1,4 @@
-
-[
+const gamesList =[
   {
     "title": "Développement logiciel / IT",
     "year": null,
