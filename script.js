@@ -3,7 +3,7 @@ const gamesList = [
 		title: "Développement logiciel / IT",
 		year: null,
 		imageUrl:
-			"https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html",
+			"https://starkcloud.com/wp-content/uploads/2024/12/La-tecnologia-del-futuro-5-avances-que-cambiaran-el-mundo-2000x1200-1-1024x614.jpg",
 		id: 1,
 	},
 	{
