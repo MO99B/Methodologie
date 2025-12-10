@@ -303,10 +303,7 @@ function renderRecommendations(game) {
 
   // (Optionnel) Image du domaine sélectionné
   const imageBlock = game.imageUrl
-    ? `
-      <div class="mb-3 text-center">
-        ${escapeAttr(game.imageUrl)}
-      </div>`
+    ? ""
     : "";
 
   container.innerHTML = `
