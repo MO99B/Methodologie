@@ -256,12 +256,85 @@ function updateGames(title, year, imageUrl, gameId) {
 }
 
 function modifyFom(gameData) {
-	const form = document.querySelector("form")
-	form.title.value = gameData.title
-	form.year.value = gameData.year
-	form.imageUrl.value = gameData.imageUrl
+  const form = document.querySelector("form");
+  if (!form) return;
+
+  form.title.value = gameData.title || "";
+  form.year.value = gameData.year || "";
+  form.imageUrl.value = gameData.imageUrl || "";
+  renderRecommendations(gameData);
+}
+function renderRecommendations(game) {
+  const container = document.getElementById("recommendation");
+  if (!container) return;
+
+  const hasRecos = Array.isArray(game.recommendations) && game.recommendations.length > 0;
+  const hasResources = Array.isArray(game.resources) && game.resources.length > 0;
+
+  // Contenu des recommandations
+  const recosHtml = hasRecos
+    ? `
+      <ul class="list-group mb-3">
+        ${game.recommendations
+          .map(
+            (r) => `
+          <li class="list-group-item">
+            <strong>${escapeHtml(r.name)}</strong>
+            <div class="small text-muted">${escapeHtml(r.description)}</div>
+          </li>`
+          )
+          .join("")}
+      </ul>`
+    : `<div class="alert alert-info">Aucune recommandation spécifique disponible pour ce domaine.</div>`;
+
+  // Contenu des liens utiles
+  const resourcesHtml = hasResources
+    ? `
+      <p class="mb-0">
+        <span class="fw-semibold">Liens utiles :</span>
+        ${game.resources
+          .map(
+            (l) =>
+              `${escapeAttr(l.url)}${escapeHtml(l.label)}</a>`
+          )
+          .join(" • ")}
+      </p>`
+    : "";
+
+  // (Optionnel) Image du domaine sélectionné
+  const imageBlock = game.imageUrl
+    ? `
+      <div class="mb-3 text-center">
+        ${escapeAttr(game.imageUrl)}
+      </div>`
+    : "";
+
+  container.innerHTML = `
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-2">${escapeHtml(game.title)}</h5>
+        ${imageBlock}
+        <h6 class="fw-semibold mb-2">Recommandations :</h6>
+        ${recosHtml}
+        ${resourcesHtml}
+      </div>
+    </div>
+  `;
 }
 
+// -- Petits utilitaires pour sécuriser l’HTML injecté --
+function escapeHtml(str = "") {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function escapeAttr(str = "") {
+  // Pour les attributs (src, href, alt…)
+  return String(str).replace(/"/g, "&quot;");
+}
 function modifyModal(modalTitle, modalBody) {
 	// Écrire le nom du jeu dans le titre du modal
 	document.querySelector(".modal-title").textContent = modalTitle
