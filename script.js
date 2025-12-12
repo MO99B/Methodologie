@@ -165,7 +165,7 @@ function writeDom() {
 	gamesList.forEach((game) => {
 		const articleContainer = document.querySelector(".row")
 		articleContainer.innerHTML += `<article class="col">
-                    <div class="card shadow-sm"  style="height: 500px; >
+                    <div class="card shadow-sm"  style="height: 500px;" >
                         <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
                         <div class="card-body">
                         <h3 class="card-title">${game.title}</h3>
