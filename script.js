@@ -281,6 +281,8 @@ function editModal(gameId) {
 				title: selectedGame.title,
 				year: selectedGame.year,
 				imageUrl: selectedGame.imageUrl,
+				recommendations : selectedGame.recommendations,
+				resources : selectedGame.resources,
 			})
 			
 
