@@ -239,6 +239,14 @@ function editModal(gameId) {
             document.getElementById("domain").value = domain;
             recommend();
         }
+function downloadFile() {
+    const link = document.createElement('a');
+    link.href ="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FMO99B%2FM3DES%2Frefs%2Fheads%2Fmain%2FGuide%2520m%25C3%25A9thodologie%25205.docx&wdOrigin=BROWSELINK";
+    link.download ="Guide Methodologique"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
         function recommend() {
             const domain = document.getElementById("domain").value;
