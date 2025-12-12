@@ -230,7 +230,119 @@ function editModal(gameId) {
 		
 	})
 }
+   function toggleChatbot() {
+            const chatbotWindow = document.getElementById("chatbot-window");
+            chatbotWindow.style.display = chatbotWindow.style.display === "flex" ? "none" : "flex";
+        }
 
+        function setDomain(domain) {
+            document.getElementById("domain").value = domain;
+            recommend();
+        }
+
+        function recommend() {
+            const domain = document.getElementById("domain").value;
+            const output = document.getElementById("recommendation");
+            let recommendations = "";
+
+            switch (domain) {
+                case "logiciel":
+                    recommendations = `
+                        <h3>Domaine : Développement logiciel</h3>
+                        <ul>
+                            <li><strong>Scrum</strong> : Pour les projets agiles avec des livraisons incrémentales.</li>
+                            <li><strong>Kanban</strong> : Pour la gestion continue des tâches et la visualisation du flux de travail.</li>
+                            <li><strong>PMBOK</strong> : Pour structurer les phases du projet et assurer la gouvernance.</li>
+                        </ul>
+                        <p>Liens utiles : <a href="https://www.scrum.org" target="_blank">Scrum.org</a>, <a href="https://kanban.university" target="_blank">Kanban University</a></p>`;
+                    break;
+                case "marketing":
+                    recommendations = `
+                        <h3>Domaine : Marketing</h3>
+                        <ul>
+                            <li><strong>Lean</strong> : Pour optimiser les campagnes et réduire les gaspillages.</li>
+                            <li><strong>Design Thinking</strong> : Pour centrer les actions sur les besoins des clients.</li>
+                            <li><strong>PMBOK</strong> : Pour structurer les livrables et les phases de projet.</li>
+                        </ul>
+                        <p>Liens utiles : <a href="https://www.lean.org" target="_blank">Lean.org</a>, <a href="https://www.designthinking.eu" target="_blank">Design Thinking Europe</a></p>`;
+                    break;
+                case "construction":
+                    recommendations = `
+                        <h3>Domaine : Construction</h3>
+                        <ul>
+                            <li><strong>PMBOK</strong> : Pour une gestion rigoureuse des coûts, délais et qualité.</li>
+                            <li><strong>Prince2</strong> : Pour une gouvernance forte et une documentation complète.</li>
+                        </ul>
+                        <p>Liens utiles : <a href="https://www.pmbokguide.com" target="_blank">PMBOK Guide</a>, <a href="https://www.prince2.com" target="_blank">Prince2</a></p>`;
+                    break;
+                case "industrie":
+                    recommendations = `
+                        <h3>Domaine : Industrie / Production</h3>
+                        <ul>
+                            <li><strong>Lean Manufacturing</strong> : Pour améliorer l'efficacité et réduire les gaspillages.</li>
+                            <li><strong>Six Sigma</strong> : Pour améliorer la qualité et réduire les défauts.</li>
+                            <li><strong>PMBOK</strong> : Pour structurer les projets industriels complexes.</li>
+                        </ul>
+                        <p>Liens utiles : <a href="https://www.isixsigma.com" target="_blank">iSixSigma</a>, <a href="https://www.lean.org" target="_blank">Lean.org</a></p>`;
+                    break;
+                case "autre":
+                default:
+                    recommendations = `
+                        <h3>Domaine : ${domain}</h3>
+                        <p>Aucune recommandation spécifique trouvée. Voici des méthodologies générales :</p>
+                        <ul>
+                            <li><strong>Scrum</strong> : Pour les projets agiles.</li>
+                            <li><strong>Lean</strong> : Pour optimiser les ressources.</li>
+                            <li><strong>PMBOK</strong> : Pour une gestion structurée et complète.</li>
+                            <li><strong>Kanban</strong> : Pour la gestion visuelle des tâches.</li>
+                        </ul>`;
+                    break;
+            }
+
+            output.innerHTML = recommendations;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const inputField = document.getElementById("chat-input");
+            const message = inputField.value;
+            if (message.trim() === "") return;
+
+            displayMessage(message, "user-message");
+            inputField.value = "";
+
+            // Simulated bot response
+            setTimeout(() => {
+                let response = "Désolé, je ne peux pas répondre à cela pour l'instant.";
+				if(message.toLowerCase().includes("bonjour")){
+				  response = "Bonjour comment je peux vous aider ?";
+				}
+                else if(message.toLowerCase().includes("logiciel")) {
+                    response = "Pour le développement logiciel, envisagez Scrum ou Kanban.";
+                } else if (message.toLowerCase().includes("marketing")) {
+                    response = "Le Lean et le Design Thinking sont de bonnes méthodologies en marketing.";
+                } else if (message.toLowerCase().includes("construction")) {
+                    response = "Le PMBOK est recommandé pour les projets de construction.";
+                } else if (message.toLowerCase().includes("industrie")) {
+                    response = "Lean Manufacturing et Six Sigma sont des choix judicieux.";
+                }
+                displayMessage(response, "bot-message");
+            }, 1000);
+        }
+
+        function displayMessage(message, className) {
+            const messagesContainer = document.getElementById("chatbot-messages");
+            const messageElement = document.createElement("div");
+            messageElement.className = `message ${className}`;
+            messageElement.innerText = message;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
 function updateGames(title, year, imageUrl, gameId) {
 	// Trouvez le jeu en fonction de son identifiant
 	const index = gamesList.findIndex((game) => game.id === parseInt(gameId))
