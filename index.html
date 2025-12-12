@@ -13,6 +13,76 @@
             object-fit: cover;
             max-height: 255px;
         }
+		.chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px; /* Small circle */
+            height: 60px; /* Small circle */
+            background-color: #3498db;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+        .chatbot-window {
+            position: fixed;
+            bottom: 80px; /* Adjusted for space above the button */
+            right: 20px;
+            width: 250px;
+            height: 250px;
+            background-color: #34495e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chatbot-messages {
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 180px;
+            flex-grow: 1;
+        }
+        .chatbot-input {
+            display: flex;
+        }
+        .chatbot-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px 0 0 6px;
+        }
+        .chatbot-input button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            background-color: #1abc9c;
+            color: white;
+            cursor: pointer;
+        }
+        .chatbot-input button:hover {
+            background-color: #16a085;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .user-message {
+            background-color: #3498db;
+            color: white;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            text-align: left;
+        }
     </style>
 
 
