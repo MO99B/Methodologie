@@ -282,11 +282,7 @@ function editModal(gameId) {
 				year: selectedGame.year,
 				imageUrl: selectedGame.imageUrl,
 			})
-			document
-				.querySelector('button[type="submit"]')
-				.addEventListener("click", () =>
-					updateGames(title.value, year.value, imageUrl.value, gameId)
-				)
+			
 
 		})
 		
