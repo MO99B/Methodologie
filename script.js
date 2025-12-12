@@ -206,6 +206,68 @@ editButtons.forEach((btn) => {
 	})
 })
 
+
+async function downloadFilee() {
+    
+    const viewerUrl = "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FMO99B%2FM3DES%2Frefs%2Fheads%2Fmain%2FGuide%2520m%25C3%25A9thodologie%25205.docx&wdOrigin=BROWSELINK";
+
+    const params = new URL(viewerUrl).searchParams;
+    const fileUrl = params.get('src') || viewerUrl; // ex: https://raw.githubusercontent.com/.../Guide méthodologie 5.docx
+    const fileName = "Guide Methodologique.docx";   // nom suggéré pour le téléchargement
+
+    
+    const win = window.open(viewerUrl, "_blank");
+    if (!win) {
+        alert("La fenêtre a été bloquée par le navigateur. Autorisez les pop-ups pour ce site.");
+        return;
+    }
+
+    
+    const status = document.createElement("div");
+    status.id = "download-status";
+    status.className = "position-fixed bottom-0 end-0 m-3 p-3 bg-dark text-white rounded shadow d-flex align-items-center gap-2";
+    status.innerHTML = `
+        <div class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></div>
+        <span>Téléchargement en cours…</span>
+    `;
+    document.body.appendChild(status);
+
+
+    try {
+        const resp = await fetch(fileUrl, { mode: "cors" }); // peut échouer si le serveur n’autorise pas CORS
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+
+        const blob = await resp.blob();
+        const objectUrl = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = objectUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(objectUrl);
+
+        
+        status.innerHTML = `<span class="me-2">✅ Téléchargement terminé</span>`;
+        setTimeout(() => status.remove(), 1500);
+    } catch (err) {
+        console.error("Téléchargement via fetch échoué :", err);
+
+        
+        const a = document.createElement("a");
+        a.href = fileUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        status.innerHTML = `<span class="me-2">⚠️ Document ouvert dans l’onglet. Le téléchargement dépend du serveur/du navigateur.</span>`;
+        setTimeout(() => status.remove(), 2500);
+    }
+}
+
+
 function editModal(gameId) {
 	// Trouvez le jeu en fonction de son identifiant
 	const result = gamesList.findIndex((game) => game.id === parseInt(gameId))
