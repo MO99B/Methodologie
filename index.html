@@ -30,6 +30,22 @@
             color: white;
             font-size: 24px;
         }
+		.download {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 40px; /* Small circle */
+            height: 40px; /* Small circle */
+            background-color: #00000000; /* #3498db*/
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
         .chatbot-window {
             position: fixed;
             bottom: 80px; /* Adjusted for space above the button */
@@ -125,6 +141,9 @@
         🤖
 		
     </div>
+	<div class="download" >
+    ⤵️	
+    </div>	
     <div class="chatbot-window" id="chatbot-window">
         <div class="chatbot-messages" id="chatbot-messages"></div>
         <div class="chatbot-input">
